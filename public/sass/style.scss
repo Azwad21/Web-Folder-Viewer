@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+div.tree-view-container {
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+    width: 300px;
+    border-radius: 5px;
+
+    div.toolbar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        justify-items: space-between;
+        span.label {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: bold;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            text-transform: uppercase;
+            // background-color: red;
+            color: #fff;
+        }
+        
+        div.folderControls {
+            // background-color: red;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            place-items: center;
+            color: #fff;
+
+            div.folderBtn {
+                padding: .35rem .4rem;
+                font-size: 13px;
+                border-radius: 4px;
+                margin-left: .5rem;
+                
+                &:hover {
+                    background-color:rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+
+    div.tree {
+        div.view-element {
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+            user-select: none;
+            font-size: 14px;
+            
+            &.folder {
+                position: relative;
+                
+                span.caret, span.folderIcon {
+                    --left: 0;
+                    position: absolute;
+                    left: var(--left);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 11px;
+
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &.file {
+                position: relative;
+                
+                span.fileIcon {
+                    --left: 0;
+                    position: absolute;
+                    left: var(--left);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 11px;
+                }
+            }
+
+            &:hover {
+                span.label {
+                    color: #fff;
+                }
+            }
+
+            &:focus {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        div.subview {
+            height: 0;
+            overflow: hidden;
+            &.active {
+                height: auto;
+            }
+        }
+
+        div.container {
+            --left: 3px;
+            --top: 3px;
+            position: relative;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                left: var(--left);
+            }
+
+            &.active::before {
+                top: var(--top);
+                width: 1px;
+                bottom: 0;
+                background-color: rgba(255, 255, 255, 0.3)
+            }
+        }
+    }
+}

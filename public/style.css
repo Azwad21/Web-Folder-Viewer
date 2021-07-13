@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+div.tree-view-container {
+  background-color: #1d1d1d;
+  color: rgba(255, 255, 255, 0.8);
+  width: 300px;
+  border-radius: 5px;
+}
+div.tree-view-container div.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: space-between;
+}
+div.tree-view-container div.toolbar span.label {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+div.tree-view-container div.toolbar div.folderControls {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-items: center;
+  color: #fff;
+}
+div.tree-view-container div.toolbar div.folderControls div.folderBtn {
+  padding: 0.35rem 0.4rem;
+  font-size: 13px;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+div.tree-view-container div.toolbar div.folderControls div.folderBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+div.tree-view-container div.tree div.view-element {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  user-select: none;
+  font-size: 14px;
+}
+div.tree-view-container div.tree div.view-element.folder {
+  position: relative;
+}
+div.tree-view-container div.tree div.view-element.folder span.caret, div.tree-view-container div.tree div.view-element.folder span.folderIcon {
+  --left: 0;
+  position: absolute;
+  left: var(--left);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+}
+div.tree-view-container div.tree div.view-element.folder:hover {
+  cursor: pointer;
+}
+div.tree-view-container div.tree div.view-element.file {
+  position: relative;
+}
+div.tree-view-container div.tree div.view-element.file span.fileIcon {
+  --left: 0;
+  position: absolute;
+  left: var(--left);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+}
+div.tree-view-container div.tree div.view-element:hover span.label {
+  color: #fff;
+}
+div.tree-view-container div.tree div.view-element:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+div.tree-view-container div.tree div.subview {
+  height: 0;
+  overflow: hidden;
+}
+div.tree-view-container div.tree div.subview.active {
+  height: auto;
+}
+div.tree-view-container div.tree div.container {
+  --left: 3px;
+  --top: 3px;
+  position: relative;
+}
+div.tree-view-container div.tree div.container::before, div.tree-view-container div.tree div.container::after {
+  content: "";
+  position: absolute;
+  left: var(--left);
+}
+div.tree-view-container div.tree div.container.active::before {
+  top: var(--top);
+  width: 1px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map */

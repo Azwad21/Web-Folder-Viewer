@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree View</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="./app.js" defer></script>
+    <script src="./parser.js" defer></script>
+    <style id="computedTreeFolderStyles"></style>
+</head>
+
+<body>
+    <div class="tree-view-container">
+        <div class="tree">
+            <div class="container">
+            <div class="folder view-element"><span class="label">Folder 1</span></div>
+
+            <div class="subview ctive">
+                <div class="container">
+                    <div class="folder view-element"><span class="label">Sub Folder 1</span></div>
+
+                    <div class="subview">
+                        <div class="container">
+                            <div class="folder view-element"><span class="label">Sub Folder 2</span></div>
+
+                            <div class="subview">
+                                <div class="file view-element"><span class="label">index4.html</span></div>
+                                <div class="file view-element"><span class="label">style4.css</span></div>
+                                <div class="file view-element"><span class="label">app4.js</span></div>
+                            </div>
+                        </div>
+                        <div class="file view-element"><span class="label">index3.html</span></div>
+                        <div class="file view-element"><span class="label">style3.css</span></div>
+                        <div class="file view-element"><span class="label">app3.js</span></div>
+                    </div>
+                </div>
+
+                <div class="file view-element"><span class="label">index2.html</span></div>
+                <div class="file view-element"><span class="label">style2.css</span></div>
+                <div class="file view-element"><span class="label">app2.js</span></div>
+            </div>
+            </div>
+
+            <div class="file view-element"><span class="label">index.html</span></div>
+            <div class="file view-element"><span class="label">style.css</span></div>
+            <div class="file view-element" ><span class="label">app.js</span></div>
+        </div>
+    </div>
+
+    <button onclick="document.querySelector('div.view-element.file').focus()
+    ">Click Me</button>
+</body>
+
+</html>
+
+<!-- 
+    <div class="toolbar">
+            <div class="rootFolderName">
+                <span class="label">root folder</span>
+            </div>
+            <div class="folderControls">
+                <div class="folderBtn">
+                    <span class="folderIcon"><i class="bi bi-file-plus"></i></span>
+                </div>
+                <div class="folderBtn">
+                    <span class="folderIcon"><i class="bi bi-folder-plus"></i></span>
+                </div>
+                <div class="folderBtn">
+                    <span class="folderIcon"><i class="bi bi-arrow-clockwise"></i></span>
+                </div>
+            </div>
+        </div>
+ -->
